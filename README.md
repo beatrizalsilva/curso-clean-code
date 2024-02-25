@@ -122,8 +122,24 @@ const number = +numberInString
 const numberInString = "12373"
 const number = Number(numberInString)
 ```
-O artigo do Lucas Santos [As más práticas mais comuns no JavaScript](https://blog.lsantos.dev/mas-praticas-javascript/), aborda algumas exemplos de "más" práticas no JavaScript.
-
 Boas práticas com syntactic sugars:
 * [Artigo Javascript Syntactic Sugar](https://giuliacajati.medium.com/javascript-syntactic-sugar-157217c4faab) 
 * [Artigo Syntactic Sugar and Modern JavaScript.](https://medium.com/@teamtechsis/syntactic-sugar-and-modern-javascript-b0293ff28311#:~:text=What%20is%20syntactic%20sugar%20exactly,alternate%2C%20more%20verbose%2C%20form.)
+
+## Código limpo com React
+### Desacoplando componentes
+É importante entender quando separar um componente em menores, pois o React carrega em um único arquivo até três tipos de tecnológias diferentes e isso pode deixar o código confuso para receber manutenção.
+
+Assim, a dois momentos em que o desacoplamento de componentes se faz necessário, como:
+1. Quando se tem algo repetitivo
+2. Quando se consegue isolar algo do seu contexto sem prejudicar seu comportamento original
+
+### Componentes puros
+Funções puras são funções que dependem apenas dos parâmetros enviados pra ela, e com esses prâmetros ela consegue fazer tudo que precisa ser feito e devolver uma resposta, ou seja, o valor de retorno é determinado apenas por seus valores de entrada e o valor de retorno são sempre os mesmos para os valores de entrada.
+
+### Funções e eventos no React
+* Handle: sempre que criada uma função dentro do componente e essa função for disparada por um evento de usuário, prefixa (inicia-se) o nome da função com handle.
+* On: quando criado um componente e este componente e este precisa receber uma função que é disparada por um evento do usuário, prefixa (inicia-se) o nome da função com on.
+
+### Condicionais no render
+Evite deixar muitas operações JavaScrip no render (camada HTML), colocando essas operações na camada acima antes do return.
